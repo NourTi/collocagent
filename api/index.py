@@ -31,3 +31,16 @@ from collocagent.server import INDEX, RULES, Handler, ensure_index  # noqa: E402
 
 ensure_index()
 Handler.agent = CollocAgent(RULES, INDEX)
+
+
+class handler(Handler):  # noqa: N801 - name required by the Vercel runtime
+    """Released handler with platform path normalisation in front of it."""
+
+    def do_GET(self) -> None:  # noqa: N802
+        path = urlparse(self.path).path
+        self.path = "/health" if path.rstrip("/").endswith("/health") else "/"
+        super().do_GET()
+
+    def do_POST(self) -> None:  # noqa: N802
+        self.path = "/api/analyze"
+        super().do_POST()
