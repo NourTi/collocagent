@@ -57,7 +57,8 @@ PYTHONPATH=. python scripts/evaluate_smoke.py
 
 The corpus index is generated, not version-controlled, so `build-demo` must run
 once in a fresh checkout before the smoke evaluation. Continuous integration
-runs these commands on Python 3.10 through 3.13 on every push.
+runs these commands on Python 3.10 and 3.13, the oldest and newest supported
+versions, on every push.
 
 The included smoke fixtures verify routing and output contracts only. They are not an external benchmark and are not evidence of model effectiveness.
 
