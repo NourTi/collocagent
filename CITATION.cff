@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "CollocAgent: A Corpus-Grounded System for Auditable Collocation Feedback"
+abstract: >-
+  CollocAgent is a standalone system for collocation feedback in second-language
+  academic writing. It separates diagnosis, corpus retrieval with candidate
+  ranking, and explanation, and binds every reported statistic to a named corpus,
+  a stated co-occurrence window, and a SHA-256 fingerprint of the indexed source
+  files. When the corpus index provides no support for a recommendation, the
+  system returns an explicit insufficient-evidence status instead of a number.
+  The implementation uses only the Python standard library and runs from a
+  command line, a local JSON API, and a browser client.
+type: software
+authors:
+  - given-names: "Mohammed Abdessamed"
+    family-names: "Nour"
+    email: "ma.nour@cu-elbayadh.dz"
+    affiliation: "Centre Universitaire Nour Bachir El-Bayadh, Algeria"
+    orcid: "https://orcid.org/0009-0004-1788-4647"
+version: 1.0.0
+date-released: "2026-08-25"
+license: MIT
+repository-code: "https://github.com/NourTi/collocagent"
+doi: "REPLACE_WITH_ZENODO_DOI_AFTER_PUBLICATION"
+keywords:
+  - collocation errors
+  - learner corpora
+  - association measures
+  - log-Dice
+  - pointwise mutual information
+  - retrieval-augmented generation
+  - automated writing feedback
+  - reproducible research software

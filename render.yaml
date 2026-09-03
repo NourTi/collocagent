@@ -1,0 +1,14 @@
+# Render blueprint. Deploys the released CollocAgent artifact unchanged,
+# using the repository Dockerfile, on Render's free instance type.
+services:
+  - type: web
+    name: collocagent
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: COLLOCAGENT_HOST
+        value: 0.0.0.0

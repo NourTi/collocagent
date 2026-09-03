@@ -1,0 +1,10 @@
+{
+  "corpus_name": "Bundled synthetic demo corpus (not research evidence)",
+  "fingerprint_sha256": "5678b9e63d4a52fef668ca792eed513bb161dcce47491a4e2797d54d258d068e",
+  "window": 4,
+  "total_tokens": 449,
+  "sentence_count": 53,
+  "source_file_count": 1,
+  "status": "ready",
+  "db_path": "/vercel/sandbox/data/CollocAgent_Submission_Package/software/data/collocagent.sqlite3"
+}

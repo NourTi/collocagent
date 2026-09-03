@@ -1,0 +1,116 @@
+[
+  {
+    "id": "VN_MAKE_EXPERIMENT",
+    "patterns": ["make an experiment", "made an experiment", "making an experiment"],
+    "relation": "verb+noun",
+    "severity": "error",
+    "rationale": "In standard academic English, experiment conventionally combines with conduct, perform, or carry out; make is a common learner substitution.",
+    "candidates": [
+      {"phrase": "conduct an experiment", "collocate": "conduct", "base": "experiment"},
+      {"phrase": "perform an experiment", "collocate": "perform", "base": "experiment"},
+      {"phrase": "carry out an experiment", "collocate": "carry", "base": "experiment"}
+    ]
+  },
+  {
+    "id": "VN_MAKE_RESEARCH",
+    "patterns": ["make research", "made research", "making research"],
+    "relation": "verb+noun",
+    "severity": "error",
+    "rationale": "Research is normally conducted, carried out, or undertaken in formal academic prose.",
+    "candidates": [
+      {"phrase": "conduct research", "collocate": "conduct", "base": "research"},
+      {"phrase": "carry out research", "collocate": "carry", "base": "research"},
+      {"phrase": "undertake research", "collocate": "undertake", "base": "research"}
+    ]
+  },
+  {
+    "id": "AN_BIG_IMPORTANCE",
+    "patterns": ["big importance"],
+    "relation": "adjective+noun",
+    "severity": "recommendation",
+    "rationale": "Big is understandable, but great, considerable, or paramount is conventional in formal academic register.",
+    "candidates": [
+      {"phrase": "great importance", "collocate": "great", "base": "importance"},
+      {"phrase": "considerable importance", "collocate": "considerable", "base": "importance"},
+      {"phrase": "paramount importance", "collocate": "paramount", "base": "importance"}
+    ]
+  },
+  {
+    "id": "AN_STRONG_RAIN",
+    "patterns": ["strong rain"],
+    "relation": "adjective+noun",
+    "severity": "error",
+    "rationale": "English conventionally uses heavy or torrential, rather than strong, to describe intense rain.",
+    "candidates": [
+      {"phrase": "heavy rain", "collocate": "heavy", "base": "rain"},
+      {"phrase": "torrential rain", "collocate": "torrential", "base": "rain"}
+    ]
+  },
+  {
+    "id": "VN_DO_DECISION",
+    "patterns": ["do a decision", "did a decision", "do the decision"],
+    "relation": "verb+noun",
+    "severity": "error",
+    "rationale": "Decision conventionally combines with make, reach, or (especially in British usage) take.",
+    "candidates": [
+      {"phrase": "make a decision", "collocate": "make", "base": "decision"},
+      {"phrase": "reach a decision", "collocate": "reach", "base": "decision"},
+      {"phrase": "take a decision", "collocate": "take", "base": "decision"}
+    ]
+  },
+  {
+    "id": "VN_SAY_LIE",
+    "patterns": ["say a lie", "said a lie"],
+    "relation": "verb+noun",
+    "severity": "error",
+    "rationale": "The conventional verb-noun combination is tell a lie.",
+    "candidates": [
+      {"phrase": "tell a lie", "collocate": "tell", "base": "lie"}
+    ]
+  },
+  {
+    "id": "VN_PAY_EFFORT",
+    "patterns": ["pay an effort", "paid an effort"],
+    "relation": "verb+noun",
+    "severity": "error",
+    "rationale": "English conventionally uses make an effort or exert effort.",
+    "candidates": [
+      {"phrase": "make an effort", "collocate": "make", "base": "effort"},
+      {"phrase": "exert effort", "collocate": "exert", "base": "effort"}
+    ]
+  },
+  {
+    "id": "VN_RAISE_ATTENTION",
+    "patterns": ["raise attention to", "raises attention to", "raised attention to"],
+    "relation": "verb+noun+preposition",
+    "severity": "recommendation",
+    "rationale": "Formal English usually uses draw attention to or call attention to when highlighting an issue.",
+    "candidates": [
+      {"phrase": "draw attention to", "collocate": "draw", "base": "attention"},
+      {"phrase": "call attention to", "collocate": "call", "base": "attention"}
+    ]
+  },
+  {
+    "id": "VN_ACHIEVE_CONCLUSION",
+    "patterns": ["achieve a conclusion", "achieved a conclusion"],
+    "relation": "verb+noun",
+    "severity": "recommendation",
+    "rationale": "A conclusion is normally reached or drawn rather than achieved.",
+    "candidates": [
+      {"phrase": "reach a conclusion", "collocate": "reach", "base": "conclusion"},
+      {"phrase": "draw a conclusion", "collocate": "draw", "base": "conclusion"}
+    ]
+  },
+  {
+    "id": "AN_HIGH_IMPROVEMENT",
+    "patterns": ["high improvement"],
+    "relation": "adjective+noun",
+    "severity": "recommendation",
+    "rationale": "Significant, substantial, or marked is conventional when the intended meaning is a large improvement.",
+    "candidates": [
+      {"phrase": "significant improvement", "collocate": "significant", "base": "improvement"},
+      {"phrase": "substantial improvement", "collocate": "substantial", "base": "improvement"},
+      {"phrase": "marked improvement", "collocate": "marked", "base": "improvement"}
+    ]
+  }
+]

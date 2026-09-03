@@ -1,0 +1,2 @@
+# The core artifact uses only the Python standard library.
+# Python >= 3.10 is required.

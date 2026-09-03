@@ -1,0 +1,10 @@
+services:
+  collocagent:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      COLLOCAGENT_HOST: 0.0.0.0
+      COLLOCAGENT_PORT: 8000

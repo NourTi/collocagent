@@ -1,0 +1,10 @@
+{"id":"s01","text":"The researchers make an experiment to test the claim.","expected_rule":"VN_MAKE_EXPERIMENT","expected_top":"conduct an experiment"}
+{"id":"s02","text":"They make research on academic vocabulary.","expected_rule":"VN_MAKE_RESEARCH","expected_top":"conduct research"}
+{"id":"s03","text":"This finding has big importance for teachers.","expected_rule":"AN_BIG_IMPORTANCE","expected_top":"great importance"}
+{"id":"s04","text":"Strong rain delayed data collection.","expected_rule":"AN_STRONG_RAIN","expected_top":"heavy rain"}
+{"id":"s05","text":"The committee did a decision yesterday.","expected_rule":"VN_DO_DECISION","expected_top":"make a decision"}
+{"id":"s06","text":"The participant said a lie during the interview.","expected_rule":"VN_SAY_LIE","expected_top":"tell a lie"}
+{"id":"s07","text":"The team paid an effort to document the process.","expected_rule":"VN_PAY_EFFORT","expected_top":"make an effort"}
+{"id":"s08","text":"The paper raises attention to an unresolved problem.","expected_rule":"VN_RAISE_ATTENTION","expected_top":"draw attention to"}
+{"id":"s09","text":"We achieved a conclusion after the analysis.","expected_rule":"VN_ACHIEVE_CONCLUSION","expected_top":"reach a conclusion"}
+{"id":"s10","text":"The revision produced a high improvement in precision.","expected_rule":"AN_HIGH_IMPROVEMENT","expected_top":"significant improvement"}

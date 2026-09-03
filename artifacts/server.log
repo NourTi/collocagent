@@ -1,0 +1,3 @@
+CollocAgent running at http://127.0.0.1:8000
+[collocagent] 127.0.0.1 - "GET /health HTTP/1.1" 200 -
+[collocagent] 127.0.0.1 - "POST /api/analyze HTTP/1.1" 200 -

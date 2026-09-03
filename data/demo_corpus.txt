@@ -1,0 +1,23 @@
+NOTICE: This is a synthetic demonstration corpus created only for software testing. It is not evidence for the research paper and must not be represented as COCA, BNC, or any other external corpus.
+
+The researchers conducted an experiment under controlled conditions. A second team conducted an experiment with a larger sample. We conduct an experiment to test the stated hypothesis. The laboratory will conduct an experiment after calibration. The authors conducted an experiment and reported all parameters. Researchers often perform an experiment before field deployment. The group performed an experiment using the revised protocol. Students perform an experiment to verify the calculation. The team carried out an experiment in two stages.
+
+The authors conduct research on corpus-based language learning. We conducted research using an annotated learner dataset. Independent teams conduct research across several disciplines. Graduate teams conduct research with documented procedures. Applied linguists conduct research on learner language. Reviewers conduct research only after ethical approval. The investigators carried out research with informed consent. Researchers undertake research when the ethical protocol is approved. The project will undertake research on academic vocabulary.
+
+This distinction is of great importance for interpretation. Replicability is of great importance in empirical work. The issue has considerable importance for language education. Data provenance is of paramount importance for reproducible NLP.
+
+Heavy rain affected the sampling schedule. The region experienced heavy rain during fieldwork. Torrential rain caused temporary disruption.
+
+The committee made a decision after reviewing the evidence. The panel reached a decision by consensus. The board took a decision after consultation.
+
+A participant should not tell a lie during the interview. The witness refused to tell a lie.
+
+The team made an effort to document every preprocessing step. Researchers must make an effort to preserve provenance. The participants exerted effort throughout the task.
+
+The analysis draws attention to a recurring lexical pattern. The authors draw attention to limitations of the corpus. The report calls attention to potential sampling bias.
+
+The evidence supports us in reaching a conclusion. The authors reached a conclusion after triangulating the results. We draw a conclusion only from attested examples.
+
+The revised model produced a significant improvement in precision. We observed a significant improvement after calibration. The intervention yielded a substantial improvement in recall. The learner showed marked improvement over time.
+
+For deterministic software verification, teams conduct an experiment with a fixed seed. Reviewers conduct an experiment after checking the protocol. Researchers conduct an experiment and archive the configuration. Students conduct an experiment before writing the report. Committees make a decision after examining the record. Researchers make a decision only after reviewing the evidence. Analysts reach a conclusion from the documented observations. Independent readers reach a conclusion from the same evidence.

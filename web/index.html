@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CollocAgent · Corpus-grounded writing feedback</title>
+  <style>
+    :root{color-scheme:light dark;--ink:#2c2c2b;--muted:#6f6d69;--canvas:#fff;--surface:#f9f8f7;--border:#e6e5e3;--blue:#2783de;--soft:#e5f2fc;--green:#2f7d56;--green-soft:#e8f1ec;--red:#b9473d;--red-soft:#fce9e7}
+    *{box-sizing:border-box} body{margin:0;background:var(--canvas);color:var(--ink);font:16px/1.55 Arial,sans-serif}.shell{max-width:1040px;margin:0 auto;padding:48px 32px 64px}header{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;margin-bottom:40px}.eyebrow{color:var(--blue);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}h1{font-size:42px;line-height:1.08;margin:8px 0 12px;letter-spacing:-.03em;max-width:720px}header p{color:var(--muted);max-width:700px;margin:0}.status{border:1px solid var(--border);padding:10px 14px;border-radius:8px;font-size:14px;background:var(--surface)}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#46a171;margin-right:8px}.workspace{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:24px}.card{border:1px solid var(--border);border-radius:12px;background:var(--canvas);padding:24px}.card h2{font-size:18px;margin:0 0 8px}.hint{color:var(--muted);font-size:14px;margin:0 0 16px}textarea{width:100%;min-height:210px;resize:vertical;border:1px solid var(--border);border-radius:8px;padding:16px;background:var(--surface);color:var(--ink);font:16px/1.5 Arial,sans-serif}textarea:focus,button:focus{outline:3px solid rgba(39,131,222,.26);outline-offset:2px}button{margin-top:16px;min-height:44px;border:0;border-radius:8px;padding:0 18px;background:var(--blue);color:white;font-weight:700;font-size:15px;cursor:pointer}button:disabled{opacity:.6;cursor:wait}.result{min-height:325px}.empty{color:var(--muted);display:grid;place-items:center;text-align:center;min-height:230px;border:1px dashed var(--border);border-radius:8px;padding:24px}.issue{border-left:4px solid var(--blue);padding:0 0 0 16px}.issue h3{font-size:17px;margin:0 0 8px}.replacement{font-size:22px;font-weight:700;color:var(--green);margin:4px 0 14px}.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}.metric{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px}.metric b{display:block;font-size:12px;text-transform:uppercase;color:var(--muted);letter-spacing:.04em}.metric span{display:block;margin-top:3px}.evidence{background:var(--green-soft);border:1px solid #cfe1d6;border-radius:8px;padding:12px 14px;font-size:14px}.warning{background:var(--red-soft);border-color:#f2c8c4;color:var(--red)}footer{margin-top:28px;color:var(--muted);font-size:13px;border-top:1px solid var(--border);padding-top:18px}code{font-family:Consolas,monospace;font-size:.95em}@media(max-width:760px){.shell{padding:28px 18px 48px}header{grid-template-columns:1fr}h1{font-size:34px}.workspace{grid-template-columns:1fr}.status{justify-self:start}}@media(prefers-color-scheme:dark){:root{--ink:#fff;--muted:rgba(255,255,255,.65);--canvas:#191919;--surface:#202020;--border:rgba(255,255,255,.20);--blue:#5e9fe8;--soft:#1e3447;--green:#72bc8f;--green-soft:#20342a;--red:#e97366;--red-soft:#3d2421}.evidence{border-color:#365443}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div><div class="eyebrow">Standalone research artifact</div><h1>Corpus-grounded collocation feedback, with evidence you can audit.</h1><p>CollocAgent runs locally through a browser, command line, or JSON API. It reports corpus counts only when they exist in the indexed corpus.</p></div>
+      <div class="status"><span class="dot"></span>Local service</div>
+    </header>
+    <section class="workspace" aria-label="CollocAgent analyzer">
+      <div class="card">
+        <h2>Analyze academic prose</h2>
+        <p class="hint">Try the sample, then replace it with your own sentence or paragraph.</p>
+        <label for="text" class="eyebrow">Input text</label>
+        <textarea id="text">The researchers make an experiment to test the hypothesis.</textarea>
+        <button id="analyze">Analyze collocations</button>
+      </div>
+      <div class="card result" aria-live="polite">
+        <h2>Evidence-bounded feedback</h2>
+        <p class="hint">Recommendations, association statistics, and retrieved concordances.</p>
+        <div id="output" class="empty">Run an analysis to see the diagnostic, ranking, and corpus provenance.</div>
+      </div>
+    </section>
+    <footer><strong>Research integrity:</strong> the bundled corpus is synthetic and is only a software demonstration. Build an index from a licensed or open academic corpus before reporting empirical results.</footer>
+  </main>
+<script>
+const button=document.querySelector('#analyze');const output=document.querySelector('#output');
+const esc=(s)=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+button.addEventListener('click',async()=>{button.disabled=true;button.textContent='Analyzing…';output.className='empty';output.textContent='Retrieving corpus evidence…';try{const response=await fetch('/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:document.querySelector('#text').value})});const data=await response.json();if(!response.ok)throw new Error(data.error||'Analysis failed');if(!data.issues.length){output.className='empty';output.textContent='No declared learner-error pattern was found. This conservative result is not a guarantee that every collocation is optimal.'}else{const issue=data.issues[0];const st=issue.statistics;output.className='issue';output.innerHTML=`<h3>${esc(issue.span.text)} →</h3><div class="replacement">${esc(issue.recommended)}</div><p>${esc(issue.rationale)}</p><div class="meta"><div class="metric"><b>Pair count</b><span>${esc(st.pair_count)}</span></div><div class="metric"><b>log-Dice</b><span>${esc(st.log_dice??'not available')}</span></div></div><div class="evidence ${issue.evidence_status.includes('insufficient')?'warning':''}">${esc(issue.evidence_summary)}</div>`}}catch(error){output.className='evidence warning';output.textContent=error.message}finally{button.disabled=false;button.textContent='Analyze collocations'}});
+</script>
+</body>
+</html>
